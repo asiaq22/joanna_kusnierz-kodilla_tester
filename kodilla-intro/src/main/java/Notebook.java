@@ -28,10 +28,11 @@ public class Notebook {
             System.out.println("This notebook is very heavy.");
         }
     }
+
     public void checkYear() {
         if (this.price <= 1000 && this.year > 2000) {
             System.out.println("This notebook is cheap and not too old.");
-        } else if (this.price >1000 && this.year > 2000) {
+        } else if (this.price > 1000 && this.year > 2000) {
             System.out.println("This notebok is expensive but quite young.");
         } else {
             System.out.println("This notebook is just old.");

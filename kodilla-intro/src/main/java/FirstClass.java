@@ -24,12 +24,12 @@ public class FirstClass {                           // [1]
         youngNotebook.checkWeight();
         youngNotebook.checkYear();
 
-        Notebook exampleNotebook = new Notebook (2500, 1200, 1234);
+        Notebook exampleNotebook = new Notebook(2500, 1200, 1234);
         System.out.println(exampleNotebook.weight + "g " + exampleNotebook.price + " " + exampleNotebook.year);
         exampleNotebook.checkPrice();
         exampleNotebook.checkWeight();
         exampleNotebook.checkYear();
 
-        }
-
     }
+
+}
