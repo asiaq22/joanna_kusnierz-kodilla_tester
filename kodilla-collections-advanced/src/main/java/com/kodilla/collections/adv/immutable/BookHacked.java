@@ -5,8 +5,6 @@ public class BookHacked extends Book {
         super(author, title);
     }
 
-    public void modifyTitle(String newTitle) {
-        title = newTitle;
-    }
+
 
 }
