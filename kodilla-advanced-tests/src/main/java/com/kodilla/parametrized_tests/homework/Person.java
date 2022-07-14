@@ -10,7 +10,7 @@ public class Person {
         this.weightInKilogram = weightInKilogram;
     }
 
-    public String getBMI() {
+    public String getBMI() throws InvalidPersonException {
         if (weightInKilogram > 0 & weightInKilogram < 1000 & heightInMeters > 0 & heightInMeters < 3) {
             double bmi = weightInKilogram / (heightInMeters * heightInMeters);
             if (bmi < 15) {
@@ -36,6 +36,6 @@ public class Person {
             }
             return "Obese Class VI (Hyper Obese)";
         }
-        return "Wrong data.";
+        else throw new InvalidPersonException();
     }
 }
