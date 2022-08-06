@@ -13,7 +13,7 @@ public class GoogleExample {
         driver.get("https://www.google.com");
         driver.findElement(By.xpath("//*[@id=\"L2AGLb\"]/div")).click();
 
-        WebElement inputField = driver.findElement(By.name("q")); // [4]
+        WebElement inputField = driver.findElement(By.name("q"));
         inputField.sendKeys("Kodilla");
         inputField.submit();
     }
