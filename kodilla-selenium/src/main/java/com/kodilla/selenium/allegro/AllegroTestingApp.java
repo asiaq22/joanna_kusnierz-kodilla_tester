@@ -1,11 +1,12 @@
 package com.kodilla.selenium.allegro;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.*;
+
+import java.util.List;
 
 public class AllegroTestingApp {
 
@@ -13,19 +14,22 @@ public class AllegroTestingApp {
         System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.allegro.pl");
-        driver.findElement(By.xpath("//button[@type=\"button\"]")).click();
+        driver.findElement(By.cssSelector("button[data-role='accept-consent']")).click();
 
-        WebElement inputField = driver.findElement(By.name("string"));
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        WebElement inputField = driver.findElement(By.cssSelector("div[data-box-name='allegro.metrumHeader.search'] > div > form > input"));
         inputField.sendKeys("Mavic mini");
 
-        WebElement category = driver.findElement(By.xpath("//select[contains(@class, \"mr3m_1 m7er_k4 mj6k_n7\")]"));
+        WebElement category = driver.findElement(By.cssSelector("div[data-role='filters'] > div > select"));
         Select selectCategory = new Select(category);
         selectCategory.selectByValue("/kategoria/elektronika");
+        inputField.submit();
 
-        WebElement searchButton = driver.findElement(By.xpath("//button[@type=\"submit\"]"));
-        searchButton.click();
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div[data-box-name='items-v3'] > div > div > section > article")));
 
-
+        List<WebElement> result = driver.findElements(By.cssSelector("div[data-box-name='items-v3'] > div > div > section > article"));
+        System.out.println(result.get(2).getText());
 
     }
 }
