@@ -5,7 +5,9 @@ public class Wallet {
 
 
     public void deposit(int money) {
-        this.balance += money;
+        if (money > 0) {
+            this.balance += money;
+        }
     }
 
     public void debit(int money) {
