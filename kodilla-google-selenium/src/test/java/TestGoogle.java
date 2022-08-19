@@ -24,24 +24,22 @@ public class TestGoogle {
 //        driver.close();
 //    }
 
-//    @Test
-//    public void testGooglePage() throws InterruptedException {
-//        GoogleSearch googleSearch = new GoogleSearch(driver);
-//        googleSearch.searchResults();
-//    }
-
     @Test
-    public void testRandomResult() throws InterruptedException {
+    public void testGooglePage() throws InterruptedException {
         GoogleSearch googleSearch = new GoogleSearch(driver);
-        GoogleResults results = googleSearch.searchResults();
-
-        GoogleResults result = results.randomResult();
-        String href = results.getHref();
-
-        String pageURL = result.getURL();
-
-        Assert.assertEquals(href, pageURL);
-
-
+        googleSearch.searchResults();
     }
+
+//    @Test
+//    public void testRandomResult() throws InterruptedException {
+//        GoogleSearch googleSearch = new GoogleSearch(driver);
+//        GoogleResults results = googleSearch.searchResults();
+//
+//        GoogleResults result = results.randomResult();
+//        String href = results.getHref();
+//
+//        String pageURL = result.getURL();
+//
+//        Assert.assertEquals(href, pageURL);
+//    }
 }
