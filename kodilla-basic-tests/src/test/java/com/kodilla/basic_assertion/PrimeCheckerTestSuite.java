@@ -57,4 +57,9 @@ public class PrimeCheckerTestSuite {
         System.out.println("Test number " + count);
         assertFalse(result);
     }
+
+    @Test
+    public void shouldUseGetCount() {
+        System.out.println(checker.getCount());
+    }
 }
